@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_nav_main"
+    app:startDestination="@id/mainMenu">
+
+    <fragment
+        android:id="@+id/dateCalculation"
+        android:name="com.kemalurekli.arabulucuhesaplama.view.DateCalculation"
+        android:label="fragment_date_calculation"
+        tools:layout="@layout/fragment_date_calculation" />
+    <fragment
+        android:id="@+id/firstPartCalculation"
+        android:name="com.kemalurekli.arabulucuhesaplama.view.FirstPartCalculation"
+        android:label="fragment_first_part_calculation"
+        tools:layout="@layout/fragment_first_part_calculation" />
+    <fragment
+        android:id="@+id/secondPartCalculation"
+        android:name="com.kemalurekli.arabulucuhesaplama.view.SecondPartCalculation"
+        android:label="fragment_second_part_calculation"
+        tools:layout="@layout/fragment_second_part_calculation" >
+        <action
+            android:id="@+id/action_secondPartCalculation_to_secondPartCalculationDetails"
+            app:destination="@id/secondPartCalculationDetails" />
+        <argument
+            android:name="select1"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="select2"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="select3"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="select4"
+            android:defaultValue="0" />
+        <argument
+            android:name="price"
+            app:argType="string"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainMenu"
+        android:name="com.kemalurekli.arabulucuhesaplama.view.MainMenu"
+        android:label="fragment_main_menu"
+        tools:layout="@layout/fragment_main_menu" >
+        <action
+            android:id="@+id/action_mainMenu_to_firstPartCalculation"
+            app:destination="@id/firstPartCalculation" />
+        <action
+            android:id="@+id/action_mainMenu_to_secondPartCalculation"
+            app:destination="@id/secondPartCalculation" />
+        <action
+            android:id="@+id/action_mainMenu_to_dateCalculation"
+            app:destination="@id/dateCalculation" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondPartCalculationDetails"
+        android:name="com.kemalurekli.arabulucuhesaplama.view.SecondPartCalculationDetails"
+        android:label="fragment_second_part_calculation_details"
+        tools:layout="@layout/fragment_second_part_calculation_details" />
+</navigation>
